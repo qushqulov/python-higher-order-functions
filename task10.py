@@ -5,4 +5,4 @@ for x in text:
     if x.isdigit():
         raqamlar.append(x)
 
-print(raqamlar)
+print(raqamlar) 

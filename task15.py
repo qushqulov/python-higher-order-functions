@@ -4,4 +4,4 @@ votes = [
     {"option": "C", "votes": 97}
 ]
 
-print(max(votes, key=lambda x: x["votes"]))
+print(max(votes, key=lambda x: x["votes"])) 

@@ -4,4 +4,4 @@ students = [
     {"name": "Javlon", "grade": 76}
 ]
 
-print(sorted(students, key=lambda x: x["grade"]))
+print(sorted(students, key=lambda x: x["grade"])) 

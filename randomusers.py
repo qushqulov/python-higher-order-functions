@@ -661,20 +661,7 @@ def sort_users_by_age(data: dict, descending: bool = False) -> list[dict]:
         list[dict]: List of users with name and age sorted accordingly.
     """
     pass
-def sort_users_by_age(data, descending=False):
-    sorted_users = sorted(
-        data,
-        key=lambda x: x["dob"]["age"],
-        reverse=descending
-    )
 
-    result = []
-    for user in sorted_users:
-        result.append({
-            "name": user["name"]["first"] + " " + user["name"]["last"],
-            "age": user["dob"]["age"]
-        })
-    return result
 
 
 def get_usernames_starting_with(data: dict, letter: str) -> list[str]:
@@ -709,11 +696,7 @@ def get_average_age(data: dict) -> float:
         float: Average age.
     """
     pass
-def get_average_age(data):
-    total = 0
-    for user in data:
-        total += user["dob"]["age"]
-    return total / len(data)
+
 
 
 def group_users_by_nationality(data: dict) -> dict:
@@ -746,16 +729,7 @@ def get_all_coordinates(data: dict) -> list[tuple[str, str]]:
         list[tuple[str, str]]: List of coordinate tuples.
     """
     pass
-def get_all_coordinates(data):
-    coords = []
-    for user in data:
-        lat = user["location"]["coordinates"]["latitude"]
-        lon = user["location"]["coordinates"]["longitude"]
-        coords.append((lat, lon))
-    return coords
 
-
-def get_oldest_user(data: dict) -> dict:
     """
     Finds and returns the oldest user's name, age, and email.
 
@@ -766,16 +740,7 @@ def get_oldest_user(data: dict) -> dict:
         dict: Dictionary containing 'name', 'age', and 'email' of the oldest user.
     """
     pass
-def get_oldest_user(data):
-    oldest = max(data, key=lambda x: x["dob"]["age"])
-    return {
-        "name": oldest["name"]["first"] + " " + oldest["name"]["last"],
-        "age": oldest["dob"]["age"],
-        "email": oldest["email"]
-    }
 
-
-def find_users_in_timezone(data: dict, offset: str) -> list[dict]:
     """
     Returns users whose timezone offset matches the given value.
 
@@ -787,28 +752,9 @@ def find_users_in_timezone(data: dict, offset: str) -> list[dict]:
         list[dict]: List of users with full name and city.
     """
     pass
-def find_users_in_timezone(data, offset):
-    result = []
-    for user in data:
-        if user["location"]["timezone"]["offset"] == offset:
-            result.append({
-                "name": user["name"]["first"] + " " + user["name"]["last"],
-                "city": user["location"]["city"]
-            })
-    return result
 
 
-def get_registered_before_year(data: dict, year: int) -> list[dict]:
-    """
-    Returns users who registered before a given year.
 
-    Args:
-        data (dict): JSON data containing user records.
-        year (int): Year threshold.
-
-    Returns:
-        list[dict]: List of users with full name and registration date.
-    """
     pass
 def get_registered_before_year(data, year):
     result = []

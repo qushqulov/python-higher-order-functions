@@ -5,3 +5,4 @@ people = [
 ]
 
 print(sorted(people, key=lambda x: x["age"]))
+ 
